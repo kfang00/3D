@@ -104,6 +104,8 @@ def parse_file( fname, edges, transform, screen, color ):
             hold = s[idx + 1].split()
             add_box( edges, int(hold[0]), int(hold[1]), int(hold[2]), int(hold[3]), int(hold[4]), int(hold[5]))
             idx += 1 
+        elif (s[idx] == 'clear'):
+            edges = []
         elif (s[idx] == 'apply'):
             matrix_mult( transform, edges )
         elif (s[idx] == 'display'):
